@@ -1,0 +1,13 @@
+flowchart LR
+  IA[Identity Authority] --> EI[Eligibility Issuer]
+  EI --> VC[Anonymous Vote Token]
+  VC --> BBX[Ballot Box]
+  Client[Voting Client] -->|Encrypted ballot| BBX
+  BBX --> Board[Bulletin Board]
+  Board --> Merkle[Merkle Root]
+  Board --> Reasoning[Formal Reasoning Layer]
+  Board --> Audit[Heuristic Audit Engine]
+  Board --> Tally[Tally Authority]
+  Reasoning --> Proof[Proof Logs]
+  Audit --> Findings[Audit Findings]
+  Tally --> Result[Verifiable Result]

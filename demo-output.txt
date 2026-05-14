@@ -1,0 +1,68 @@
+=== Civitas Vote Token — Formal & Heuristic Edition ===
+
+Eleição: Consulta Digital Experimental — Madeira 2026
+
+Token emitido: { electionId: 'demo-madeira-2026', tokenIdPreview: 'qn7kHRAd...' }
+
+Boletim aceite no bulletin board:
+{
+  "electionId": "demo-madeira-2026",
+  "ballotHash": "baffbf1e57d616b8c1e04b3dd282fcdf8d4dbdca972d4abffb91db262e8a8b42",
+  "tokenCommitment": "7e8f263973f6271cb2adc8f3009a346a48f89463d6960f73cd869c0e7c4e77b1",
+  "encryptedBallot": {
+    "electionId": "demo-madeira-2026",
+    "ciphertextBase64": "Y2lwaGVydGV4dC1kZW1vOnsiZWxlY3Rpb25JZCI6ImRlbW8tbWFkZWlyYS0yMDI2Iiwibm9uY2UiOiJJdmxGa29tMXpjQlp1ZmozRXk3dW8zajM5MkVYSndfRUVNWVoxMF94MEZjIiwic2VsZWN0ZWRPcHRpb24iOiJTaW0ifQ==",
+    "algorithm": "DEMO-ONLY"
+  },
+  "acceptedAt": "2026-05-14T23:39:27.246Z",
+  "sequence": 1
+}
+
+Merkle root: bbd996470600b31b6ca02162634ae8cd92069bb460b6f0a5763b96d7e077cc7f
+Inclusão verificável: true
+
+Tentativa de reutilizar o mesmo token:
+Rejeitado correctamente: TOKEN_INVALID_OR_ALREADY_USED
+
+Top auditoria heurística:
+[
+  {
+    "target": {
+      "id": "duplicate-attempt-1",
+      "sequence": 2,
+      "hasDuplicateTokenSignal": true,
+      "baseCost": 1
+    },
+    "riskScore": 0.35,
+    "estimatedCost": 1,
+    "priority": 0.35,
+    "reasons": [
+      "duplicate_token_signal"
+    ]
+  },
+  {
+    "target": {
+      "id": "missing-proof-demo",
+      "sequence": 3,
+      "isMissingProof": true,
+      "baseCost": 1
+    },
+    "riskScore": 0.25,
+    "estimatedCost": 1,
+    "priority": 0.25,
+    "reasons": [
+      "missing_proof"
+    ]
+  },
+  {
+    "target": {
+      "id": "entry-1",
+      "sequence": 1,
+      "baseCost": 1
+    },
+    "riskScore": 0,
+    "estimatedCost": 1,
+    "priority": 0,
+    "reasons": []
+  }
+]

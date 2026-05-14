@@ -1,0 +1,14 @@
+C4Context
+  title Civitas Vote Token — Diagrama de Contexto
+
+  Person(voter, "Eleitor", "Pessoa elegível para votar")
+  Person(admin, "Comissão Eleitoral", "Configura eleição e supervisiona apuramento")
+  Person(auditor, "Auditor", "Verifica integridade pública")
+
+  System(system, "Civitas Vote Token", "Sistema de voto digital com token anónimo de elegibilidade")
+  System_Ext(eid, "Serviço de Identidade", "CC/CMD/eID institucional")
+
+  Rel(voter, system, "Obtém token e deposita boletim cifrado")
+  Rel(admin, system, "Configura eleição")
+  Rel(auditor, system, "Consulta bulletin board e provas")
+  Rel(system, eid, "Valida elegibilidade")

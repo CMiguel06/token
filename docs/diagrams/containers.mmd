@@ -1,0 +1,28 @@
+C4Container
+  title Civitas Vote Token — Containers
+
+  Person(voter, "Eleitor")
+  Person(auditor, "Auditor")
+
+  System_Boundary(cvt, "Civitas Vote Token") {
+    Container(client, "Ballot Client", "Web App", "Cifra boletim localmente e submete voto")
+    Container(identity, "Identity Authority", "API", "Valida elegibilidade")
+    Container(issuer, "Eligibility Issuer", "API", "Emite token anónimo")
+    Container(ballot, "Ballot Box", "API", "Valida token e aceita boletim cifrado")
+    Container(board, "Bulletin Board", "API/Storage", "Registo público append-only")
+    Container(tally, "Tally Service", "Worker", "Apura resultados")
+    ContainerDb(db, "PostgreSQL", "Database", "Eleição, tokens gastos, bulletin board")
+    ContainerDb(redis, "Redis", "Cache", "Bloqueio atómico de token gasto")
+    Container(cli, "Auditor CLI", "CLI", "Verifica artefactos públicos")
+  }
+
+  Rel(voter, client, "Usa")
+  Rel(client, identity, "Autenticação/elegibilidade")
+  Rel(client, issuer, "Pedido de token cego")
+  Rel(client, ballot, "Submete boletim cifrado")
+  Rel(ballot, board, "Publica voto aceite")
+  Rel(ballot, redis, "Marca token gasto")
+  Rel(board, db, "Persiste eventos")
+  Rel(tally, board, "Lê boletins cifrados")
+  Rel(auditor, cli, "Executa")
+  Rel(cli, board, "Verifica dados públicos")

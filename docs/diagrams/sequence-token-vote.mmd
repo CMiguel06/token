@@ -1,0 +1,18 @@
+sequenceDiagram
+  actor V as Eleitor
+  participant IA as Identity Authority
+  participant EI as Eligibility Issuer
+  participant BC as Ballot Client
+  participant BB as Ballot Box
+  participant BD as Bulletin Board
+
+  V->>IA: Autenticação forte
+  IA-->>V: Elegível para election_id
+  V->>EI: Pedido cego de token
+  EI-->>V: Token anónimo assinado
+  V->>BC: Selecciona opção
+  BC->>BC: Cifra boletim localmente
+  BC->>BB: anonymous_token + encrypted_ballot
+  BB->>BB: Verifica token e single-use
+  BB->>BD: Publica boletim cifrado
+  BB-->>V: Recibo técnico não comprovativo da escolha

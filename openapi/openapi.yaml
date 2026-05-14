@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Civitas Vote Token API
+  version: 0.1.0
+  description: API conceptual para voto digital com token anónimo de elegibilidade.
+servers:
+  - url: http://localhost:3000
+paths:
+  /elections/{electionId}:
+    get:
+      summary: Obtém parâmetros públicos da eleição
+      parameters:
+        - name: electionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Parâmetros públicos
+  /tokens/issue:
+    post:
+      summary: Emite token anónimo de elegibilidade
+      description: Em produção, deve receber pedido cego ou payload Privacy Pass.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [electionId, blindedTokenRequest]
+              properties:
+                electionId:
+                  type: string
+                blindedTokenRequest:
+                  type: string
+      responses:
+        '200':
+          description: Resposta de emissão
+  /ballots/cast:
+    post:
+      summary: Deposita boletim cifrado
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [electionId, anonymousToken, encryptedBallot]
+              properties:
+                electionId:
+                  type: string
+                anonymousToken:
+                  type: string
+                encryptedBallot:
+                  type: string
+                ballotProof:
+                  type: string
+      responses:
+        '201':
+          description: Boletim aceite
+        '400':
+          description: Token inválido, repetido ou boletim mal formado
+  /bulletin-board/{electionId}:
+    get:
+      summary: Obtém bulletin board público
+      parameters:
+        - name: electionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de boletins cifrados aceites
+  /tally/{electionId}:
+    get:
+      summary: Obtém resultado e provas de apuramento
+      parameters:
+        - name: electionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Resultado verificável
