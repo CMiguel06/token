@@ -232,7 +232,7 @@ A demonstração local mostra:
 
 ## Segurança e honestidade técnica
 
-Este projecto inclui criptografia educativa. Isso é útil para aprender e demonstrar Matemática Finita. Não é autorização moral para inventar criptografia de produção num sábado à noite, entre café e excesso de confiança.
+Este projecto inclui criptografia educativa. Isso é útil para aprender e demonstrar Matemática Finita.
 
 Para produção:
 
