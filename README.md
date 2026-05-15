@@ -212,6 +212,9 @@ A demonstração local mostra:
 
 > Nota: a demo usa Ed25519 para integridade local. Produção deve usar Privacy Pass, blind signatures ou anonymous credentials para obter não-ligabilidade real entre emissão e uso.
 
+<img width="1229" height="682" alt="image" src="https://github.com/user-attachments/assets/71034d9c-964c-4c83-8c4b-98442a5f5563" />
+
+
 ---
 
 ## Camadas de produção recomendadas
