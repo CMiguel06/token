@@ -249,7 +249,7 @@ Para produção:
 
 ## Ouve no Spotify 
 
-[<img width="3840" height="1155" alt="image" src="https://github.com/user-attachments/assets/4da4dcd4-4044-48fb-b7ce-fa419c0b63fb" />]([https://open.spotify.com/episode/2J3NspBa15KSp98vs9tjIE?si=BswUNr93QMyCrEyfRzeSng](https://open.spotify.com/episode/7ngdz7hVg50K1xDTrtbpLL?si=-qX_e6iWRF6JFTBOd2OfZQ))
+[<img width="3840" height="1155" alt="image" src="https://github.com/user-attachments/assets/4da4dcd4-4044-48fb-b7ce-fa419c0b63fb" />](https://open.spotify.com/episode/7ngdz7hVg50K1xDTrtbpLL?si=-qX_e6iWRF6JFTBOd2OfZQ)
 Realizado com recurso ao Notebooklm.
 
 
